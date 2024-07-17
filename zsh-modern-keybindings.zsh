@@ -346,11 +346,11 @@ for keyname        kcap   seq                   mode        widget (
 
     del               kdch1   '\E[3~'         delselect   delete-char    
 ) {
-	# TODO: Add option for this
-	if [ "$widget" = 'backward-char' ] && [ "$mode" = 'select' ]; then
-		mode=backward-char-select
-	fi
-	
+    # TODO: Add option for this
+    if [ "$widget" = 'backward-char' ] && [ "$mode" = 'select' ]; then
+        mode=backward-char-select
+    fi
+
     eval "function widget::key-$keyname() {
         widget::util-$mode $widget \$@
     }"
